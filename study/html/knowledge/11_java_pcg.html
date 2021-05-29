@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>関数クラスを用いた開発 &mdash; gon 0.1 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="オブジェクト指向" href="12_java_object.html" />
+    <link rel="prev" title="メソッド" href="10_java_method.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gon
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Javaプログラミング</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_Java_setup.html">Java入門</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_java_structure.html">Javaプログラムの基本構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_java_conmmand.html">Javaの命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_java_variable.html">変数とその宣言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_java_evaluation.html">式の評価</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_java_branch.html">条件分岐、繰り返し処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_java_section_question.html">1日目総合演習</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_java_array.html">配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_java_garbagecollection.html">メモリの解放</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_java_method.html">メソッド</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">関数クラスを用いた開発</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">あらすじ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">機能ごとにファイルを分割</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">ファイル分割の弊害</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#java">Javaの複数ファイルの実行における機能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">ファイル間でメソッドを呼び出す</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">メソッドの呼び出し(同じフォルダ内)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">レベルアップのため</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">メソッドの呼び出し(別のフォルダ)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">フルでパスを書くの疲れるという方へ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="12_java_object.html">オブジェクト指向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_java_class_instance.html">インスタンスとクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_java_class.html">クラスの生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17_java_extend.html">継承</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gon</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Javaプログラミング</a> &raquo;</li>
+        
+      <li>関数クラスを用いた開発</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/knowledge/11_java_pcg.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>関数クラスを用いた開発<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id2">
+<h2>あらすじ<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>１つのシステムを 複数の部品に分けて作るメリットを紹介しました．
+今回は機能ごとにファイルを分割するメリットと方法を紹介します．</p>
+</div>
+<div class="section" id="id3">
+<h2>機能ごとにファイルを分割<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>小規模，個人における開発の場合は大きな問題は起こりませんが，
+会社では大規模なシステムを多くの人の手で設計することになります．
+そのため，1つのファイルを寄ってたかって編集するのは効率が悪いです．</p>
+<p>そこで機能ごとにファイルを分割し，それぞれの担当が
+自由にプログラムを書けるようにしましょう．</p>
+<div class="section" id="id4">
+<h3>ファイル分割の弊害<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ファイルを複数に分割しましょうと言ったものの分割したせいで起こる弊害もあります．</p>
+<ol class="simple">
+<li><p>実行時に複数ファイルを選択する必要がある．
+ただただ，面倒な作業です．分ければ分けるほど，終わりのない地獄です．
+(言いすぎました．)
+<br>コンパイルの場合は，開発している人が各々に行うため，そこまで問題ではない．しかし，実行する場合は，ユーザが行うため無数にあるファイル実行はできない．</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">n個のファイルに分けた場合</span>
+<span class="n">java</span> <span class="n">file_1</span> <span class="n">file_2</span> <span class="o">...</span> <span class="n">file_n</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>ファイル間でメソッドを呼び出せない．
+以下のようなプログラムにおいてmainファイルからCalcファイルの平均値を返すメソッド(機能)を使うとします．このままでは，「aveってどこのもんや」とJavaのコンパイラに怒られます(エラーが出ます)．</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">main</span><span class="o">.</span><span class="n">java</span> <span class="o">--</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">main</span><span class="p">{</span>
+  <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">){</span>
+    <span class="nb">int</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+    <span class="n">average</span> <span class="o">=</span> <span class="n">ave</span><span class="p">(</span><span class="n">array</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">--</span> <span class="n">Calc</span><span class="o">.</span><span class="n">java</span> <span class="o">--</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Calc</span><span class="p">{</span>
+  <span class="n">public</span> <span class="n">static</span> <span class="n">double</span> <span class="n">ave</span><span class="p">(</span><span class="nb">int</span><span class="p">[]</span> <span class="n">array</span><span class="p">){</span>
+    <span class="n">平均値を返す処理</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>え，じゃあ分割したらいいこともあるけど，その代償が大きすぎてだめやん
+<br>→そこら辺もちゃんと考えられてますから，次から説明します．</p>
+</div>
+</div>
+<div class="section" id="java">
+<h2>Javaの複数ファイルの実行における機能<a class="headerlink" href="#java" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>はじめのデメリット：<strong>実行時に複数ファイルを選択する必要がある．</strong>
+ですが， <code class="docutils literal notranslate"><span class="pre">JARファイル</span></code> を使います．
+これは複数のクラスファイルを1つにまとめるもので，あたかも1つのファイルかのようにファイル送信ができます．受け取ったら，あらかじめ伝えられたmain文のあるファイルを実行するだけでいいです．あとはJavaが上手くやってくれます．(詳しい流れは省きます)</p>
+</div>
+<div class="section" id="id5">
+<h2>ファイル間でメソッドを呼び出す<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>二つ目のデメリット：<strong>ファイル間でメソッドを呼び出せない．</strong>
+ですが，パッケージを使います．
+パッケージとはファイルのあるフォルダ毎にグループ分けするものです．つまり，パッケージによって，指定したファイルがどこにあるかを辿れるようになるのです．
+例を下の図に示します．</p>
+<p><img alt="パッケージの例" src="../_images/pcg.jpg" /></p>
+<p>このようにファイルがどこにあるかをコード内部に記載してあげます．
+書き方は<strong>現在いるフォルダ(ディレクトリ)から見えるフォルダから書き始め，
+そのコードのファイル名</strong>までを以下のようにコードの最上部に書きます．
+絶対一番上に書いてください．お願いします．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">Calc</span><span class="o">.</span><span class="n">java</span> <span class="o">--</span>
+<span class="n">package</span> <span class="n">src</span><span class="o">.</span><span class="n">Calc</span><span class="p">;</span>
+
+<span class="o">--</span> <span class="n">enshu</span><span class="o">.</span><span class="n">java</span> <span class="o">--</span>
+<span class="n">package</span> <span class="n">src</span><span class="o">.</span><span class="n">enshu</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>これで各コードをパッケージにまとめることができました．
+と言っても実感はありませんが．</p>
+<p>重要なのは次からなので時にがんばりましょう．</p>
+</div>
+<div class="section" id="id6">
+<h2>メソッドの呼び出し(同じフォルダ内)<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>はじめに，同じフォルダ内にある別ファイルからメソッドを呼び出してみましょう．
+先ほど各ファイルをパッケージにまとめたので，勘のいい人は気づいたと思いますが(すいません，言ってみたかっただけです．)，場所がわかるならそれにたどり着くように書けばいいのです．</p>
+<p>とは言ってもどういうふうにすれば良いのか，が問題ですのでいかに例を示します．</p>
+<p>以下のようなフォルダの構成があって，enshu1.javaで同じフォルダ内のCalc.javaで定義している <code class="docutils literal notranslate"><span class="pre">平均を算出する関数</span> <span class="pre">ave</span></code> を実行するとします．この時以下のように自分のいるフォルダから見える範囲にある場合はそのままクラス名をつけられます．</p>
+<p>それでも大元である <code class="docutils literal notranslate"><span class="pre">src</span></code> から辿ってもいいです．場所はわかるので．
+同一フォルダ内の場合，フルで場所を書かなくても気を利かせて探してくれるJavaの優しさです．
+感謝です．ありがとう．</p>
+<div class="section" id="id7">
+<h3>レベルアップのため<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>このメソッドを探すのが<strong>ロードランナー</strong>です．ロードランナーは必要なメソッド等を
+<strong>クラスパス</strong>から下という範囲で探してくれる優れものです．
+クラスパスとは探索する最初の場所のことです．
+指定がなければ，同じフォルダ内しか探索しません．
+特に指定しない場合は，実行した場所からになるので，
+<strong>今回の場合はlectureからの実行なのでクラスパスはlecture</strong>になります．</p>
+<p><img alt="フォルダの構成" src="../_images/folder_structure.jpg" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>package src.section1;
+
+public class enshu1{
+  public static void main(String[] args){
+    
+    Calc.ave();
+    
+    // src.section1.Calc.ave() でもいいよ，場所はわかるから
+    
+  }
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>メソッドの呼び出し(別のフォルダ)<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次は別のフォルダにあるソースコードのメソッドを実行する場合を考えます．
+例としては先ほどのsection2の中のenshu2.javaからsection1のCalc.javaで定義したaveを実行します．</p>
+<p>別のフォルダの場合，何もしないと先ほどと異なり，Javaはsection2の中しか探索しないため
+aveを持っているCalc.javaは見つけ出せません．困りました．</p>
+<p>そこで先ほどパッケージでつけたフルネーム <code class="docutils literal notranslate"><span class="pre">src.section1.Calc</span></code> を使います．
+これによって現在はlectureにいるのでその直下の <strong>src</strong> ，src直下の <strong>section1</strong>という風に
+降っていき，無事にCalc.java，Calcクラスを見つけることができました！
+つまり，<strong>Javaはファイルの場所わからんので，人間が教えてあげないといけません．</strong></p>
+<p>どこにあるかわからんと怒られたら，すまねえと言いつつ，どこにあるか教えてあげてください．
+困ったら以下のプログラムのように現在のフォルダの直下から記載するフルパス(FQCN)を使いましょう．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>package src.section2;
+
+public class enshu2{
+  public static void main(String[] args){
+    
+    src.section1.Calc.ave()
+    
+    // Calc.ave();  ではだめ，場所が特定できないもん
+    
+  }
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>フルでパスを書くの疲れるという方へ<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>今回は <code class="docutils literal notranslate"><span class="pre">src.section1.Calc</span></code> くらいのパスでしたが，ものによってはさらに長くなり得ます．
+そうした時に何度も何度も書くのは効率が悪いです．</p>
+<p>ではどうするか．
+<br>→ <code class="docutils literal notranslate"><span class="pre">import</span></code> を使いましょう．</p>
+<p>importというのはあらかじめソースコードに地図を渡しておいて，知らないメソッドあったら
+ここも探してみてねというものです．これによって，知らないメソッドが出てきた時，
+Javaは基本の場所だけではなく，importで指定した場所も探してくれます．</p>
+<p>では，書き方ですが，先ほどの例を用いると以下のようになります．
+このように最初に地図を上げることで，後ろでは簡略化することができます．
+この時，src.section.<strong>Calc</strong> と <strong>Calc</strong> .ave()が一致するようにしましょう．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">src</span><span class="o">.</span><span class="n">section2</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">src.section.Calc</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">enshu2</span><span class="p">{</span>
+  <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">){</span>
+    
+    <span class="n">Calc</span><span class="o">.</span><span class="n">ave</span><span class="p">()</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="12_java_object.html" class="btn btn-neutral float-right" title="オブジェクト指向" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="10_java_method.html" class="btn btn-neutral float-left" title="メソッド" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2021, gon
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,313 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Java入門 &mdash; gon 0.1 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Javaプログラムの基本構造" href="02_java_structure.html" />
+    <link rel="prev" title="Javaプログラミング" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gon
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Javaプログラミング</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Java入門</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">環境の準備</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">プログラムの実行にあたって</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">実行までの流れ</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">ソースコードの作成</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">コンパイル</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">実行</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">なんでJava?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02_java_structure.html">Javaプログラムの基本構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_java_conmmand.html">Javaの命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_java_variable.html">変数とその宣言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_java_evaluation.html">式の評価</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_java_branch.html">条件分岐、繰り返し処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_java_section_question.html">1日目総合演習</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_java_array.html">配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_java_garbagecollection.html">メモリの解放</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_java_method.html">メソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_java_pcg.html">関数クラスを用いた開発</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_java_object.html">オブジェクト指向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_java_class_instance.html">インスタンスとクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_java_class.html">クラスの生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17_java_extend.html">継承</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gon</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Javaプログラミング</a> &raquo;</li>
+        
+      <li>Java入門</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/knowledge/01_Java_setup.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="java">
+<h1>Java入門<a class="headerlink" href="#java" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id1">
+<h2>環境の準備<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>すっきりわかるJava入門をすすめるにあたって実行環境が必要ですが、
+難しいことはわからんという人の<a class="reference external" href="https://dokojava.jp">実行環境はここから</a>お願いします。
+わからんけどvscodeでしたいという人は別途聞いてください。</p>
+<p>実際にリンクへ飛ぶと、以下のような画面になるので、
+とりあえず右下の&quot;&quot; &gt;&gt; &quot;&quot;からコンパイル、実行してみましょう。
+実行すると&quot;&quot; hello, world! &quot;&quot;と出力されるはずです。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Javaプログラム（test.javaの場合）
+// testというファイルですよ
+public class test{
+  // ひとまずおまじないということで
+  public static void main(String[] args){
+    // 改行付きで出力します。
+    System.out.println(&quot;hello, world!&quot;);
+  }
+}
+</pre></div>
+</div>
+<p><img alt="作業環境" src="../_images/workspace.png" /></p>
+</div>
+<div class="section" id="id2">
+<h2>プログラムの実行にあたって<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>「さーてJavaでプログラム書いてアプリケーションつくるぞ。」
+という前に<strong>プログラム実行までの流れ</strong>を押さえましょう。</p>
+</div>
+<div class="section" id="id3">
+<h2>実行までの流れ<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アプリケーションをつくるためには
+Javaでプログラムを書いたとしてもそこで終わりではなく、
+機械が読めるようにコンパイルという翻訳作業が必要です。
+そうしてできた実行ファイル(~.exe)を実行することで
+はじめてプログラムの実行結果が出力されます。</p>
+<p><img alt="作業環境" src="../_images/exe_flow.png" />
+<br>
+<br></p>
+<div class="section" id="id4">
+<h3>ソースコードの作成<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ソースコードはおそらくみなさんが思っているプログラム自体のことでC言語であったり、Java言語であったりで記述されます。つまり、<strong>人が読みやすいプログラム</strong>のことです。</p>
+</div>
+<div class="section" id="id5">
+<h3>コンパイル<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ソースコードをもとに実行ファイルを生成します。実行ファイルとは<strong>機械が読めるプログラム</strong>であり、中身は0/1の羅列となっています。
+コンパイルはコンパイラで行われ、この時、文法エラーがあると怒られます。</p>
+<p>サイトを使った場合はいりませんが、自分の実行環境をもっているばあいは以下を実行してください。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">javac</span> <span class="n">ファイル名</span><span class="o">.</span><span class="n">java</span>
+</pre></div>
+</div>
+<p>これでコンパイルすることができます。コンパイラに怒られたら修正してください。</p>
+</div>
+<div class="section" id="id6">
+<h3>実行<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>コンパイルによって生成された実行ファイルを実行するにも1ステップあり、ここで登場するのがインタプリタです。実行ファイル内部のバイトコードの変換を行い、ソフトウェアに対し実行を依頼する。Javaの場合はJVMがその仕事をします。</p>
+<p>サイトを使った場合はいりませんが、自分の実行環境をもっているばあいは以下を実行してください。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="n">test</span>
+</pre></div>
+</div>
+<p>無事に出力されることを願っております。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>なんでJava?<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>速度面的にはC言語には及ばないものの十分な実行速度です。いかにアルゴリズムを速くしようが、実行速度に限界はあるためここが速いほうが結果の出力までの時間が短くなる。
+また、JVMのおかげでどんな環境においても同様な実行結果を出力可能となります。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02_java_structure.html" class="btn btn-neutral float-right" title="Javaプログラムの基本構造" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Javaプログラミング" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2021, gon
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

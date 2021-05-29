@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Javaプログラムの基本構造 &mdash; gon 0.1 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Javaの命令" href="03_java_conmmand.html" />
+    <link rel="prev" title="Java入門" href="01_Java_setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gon
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Javaプログラミング</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_Java_setup.html">Java入門</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Javaプログラムの基本構造</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">基本的な形</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">読みやすいコードのために</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">変数名</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">インデント</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">コメントアウト</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="03_java_conmmand.html">Javaの命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_java_variable.html">変数とその宣言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_java_evaluation.html">式の評価</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_java_branch.html">条件分岐、繰り返し処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_java_section_question.html">1日目総合演習</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_java_array.html">配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_java_garbagecollection.html">メモリの解放</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_java_method.html">メソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_java_pcg.html">関数クラスを用いた開発</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_java_object.html">オブジェクト指向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_java_class_instance.html">インスタンスとクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_java_class.html">クラスの生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17_java_extend.html">継承</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gon</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Javaプログラミング</a> &raquo;</li>
+        
+      <li>Javaプログラムの基本構造</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/knowledge/02_java_structure.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="java">
+<h1>Javaプログラムの基本構造<a class="headerlink" href="#java" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id1">
+<h2>基本的な形<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>基本的に形としては、クラスブロック、メソッドブロックというまとまりで記述していきます。コードはメソッドブロックの中に書いていきます。ブロックは<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>によって囲われる部分になります。</p>
+<ul class="simple">
+<li><p>クラス？メソッド？
+⇒「クラス：ボールペン、メソッド：書く」のようなもの</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Javaプログラム（test.javaの場合）
+// test.javaというファイルにおいて
+public class test{
+  // -------------------------以下クラスブロック
+  // ひとまずおまじないということで
+  public static void main(String[] args){
+    // -----------------------以下メソッドブロック
+    // 改行付きで出力します。
+    System.out.println(&quot;hello, world!&quot;);
+  }
+}
+</pre></div>
+</div>
+<p>とりあえず実行してみましょう。</p>
+<p>簡易的に意味を紹介すると(ここでは理解しなくていいです)</p>
+<ul class="simple">
+<li><p>public：だれでもアクセスできるで(chmod⇒777の状態)</p></li>
+<li><p>class test：testクラス(ファイル名と一致させる)</p></li>
+<li><p>static：静的な値</p></li>
+<li><p>main：ここから実行する</p></li>
+<li><p>System.out.println：システムの標準出力で改行付きで出力する。</p></li>
+<li><p>(String[] args)：実行時の引数をいれるとこ</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>読みやすいコードのために<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="simple">
+<li><p>変数名</p></li>
+<li><p>インデント</p></li>
+<li><p>コメントアウト</p></li>
+</ol>
+<div class="section" id="id3">
+<h3>変数名<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>変数名とはこの後出てきますがデータを一時的に格納する箱のことです。
+この箱の名前を<strong>a</strong>のようにするとここには「何が入ってるん？」となるので名前は中身がわかるように<strong>score</strong>などとしましょう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">例</span><span class="p">)</span>
+<span class="nb">int</span> <span class="n">score</span><span class="p">;</span> <span class="o">//</span><span class="n">点数を格納</span>
+<span class="nb">int</span> <span class="n">num</span><span class="p">;</span>   <span class="o">//</span><span class="n">カウント値を格納</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>インデント<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>htmlの時と同様に読みやすいコードは重要です。
+そのためにはどこが１つのブロックであるか、
+階層が同じかをインデントによって表現します。</p>
+<p>先ほどの例のように第１階層がクラスブロック、
+第２階層がメソッドブロックという風に
+インデントを加えるときっと読みやすいと思います。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(例)
+public class test{
+←インデント→public static void main(String[] args){
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>コメントアウト<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>長々とプログラムを書いていて、
+１週間後にはこれって何してるん？
+となることが多々あります。
+こんな時に助けとなるのが**自分が残したコメントアウト(メモ)**です。</p>
+<ul class="simple">
+<li><p>// で囲えば１行のコメントアウト</p></li>
+<li><p>/* */ で囲えば複数行のコメントアウト</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(例)
+// 改行付きで標準出力します。
+System.out.println(&quot;hello, world!&quot;);
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="03_java_conmmand.html" class="btn btn-neutral float-right" title="Javaの命令" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="01_Java_setup.html" class="btn btn-neutral float-left" title="Java入門" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2021, gon
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

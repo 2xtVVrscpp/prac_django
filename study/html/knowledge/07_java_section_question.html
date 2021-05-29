@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1日目総合演習 &mdash; gon 0.1 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="配列" href="08_java_array.html" />
+    <link rel="prev" title="条件分岐、繰り返し処理" href="06_java_branch.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gon
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Javaプログラミング</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_Java_setup.html">Java入門</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_java_structure.html">Javaプログラムの基本構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_java_conmmand.html">Javaの命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_java_variable.html">変数とその宣言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_java_evaluation.html">式の評価</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_java_branch.html">条件分岐、繰り返し処理</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1日目総合演習</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">変数定義</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">値の代入</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">出力</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">入力</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">コメントアウト</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">条件文</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">ループ処理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">総合問題</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="08_java_array.html">配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_java_garbagecollection.html">メモリの解放</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_java_method.html">メソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_java_pcg.html">関数クラスを用いた開発</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_java_object.html">オブジェクト指向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_java_class_instance.html">インスタンスとクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_java_class.html">クラスの生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17_java_extend.html">継承</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gon</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Javaプログラミング</a> &raquo;</li>
+        
+      <li>1日目総合演習</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/knowledge/07_java_section_question.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>1日目総合演習<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id2">
+<h2>変数定義<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="simple">
+<li><p>整数型の変数num_iを定義してください。</p></li>
+<li><p>実数型の変数num_dを定義してください。</p></li>
+<li><p>文字列型の変数strを定義してください。</p></li>
+<li><p>１文字分の変数chrを定義してください。</p></li>
+<li><p>真偽値を入れるための変数flagを定義してください。</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ヒント：
+変数名にヒントがあるよ
+分からない時は変数のページの表を参照
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>値の代入<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>先ほど定義した変数に値を代入してください。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ヒント：
+代入の演算子は...
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>出力<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>変数の中身を出力してください。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ヒント：
+標準出力：System.out
+出力：print() / println() を使う。
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>入力<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>各変数に標準入力(キーボード)から
+値を代入してください。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ヒント：
+javaのutilのScannerを使う。
+標準入力は、System.in
+数字の場合、nextInt()
+文字列の場合、nextLine()
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>コメントアウト<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>自分の書いたプログラムの処理を説明してください
+(コメントアウト内で)</p>
+</div>
+<div class="section" id="id7">
+<h2>条件文<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="simple">
+<li><p>整数型の変数を定義し、キーボードから値を代入して、
+その値が4以上なら画面に出力するようなコードを書いてください。</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ヒント：
+もし4以上なら→if the value is higher than 4, ~
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>文字列型の変数を定義し、キーボードから値を代入して、
+その値が&quot;string&quot;なら画面に出力するようなコードを書いてください。</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ヒント：
+文字列の時は==と違うんよな～
+[str.equals()]
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>ループ処理<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="simple">
+<li><p>整数型の変数を定義し、キーボードから値を代入して、
+1から変数の値まで画面に出力するようなコードを書いてください。</p></li>
+</ol>
+</div>
+<div class="section" id="id9">
+<h2>総合問題<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>標準入力によって2つの数字が与えられるとき、
+２つのうち大きい方の数字を画面に出力する:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>実行例：
+2 3
+3の方が大きい
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="08_java_array.html" class="btn btn-neutral float-right" title="配列" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="06_java_branch.html" class="btn btn-neutral float-left" title="条件分岐、繰り返し処理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2021, gon
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

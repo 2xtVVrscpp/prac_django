@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>クラスの生成 &mdash; gon 0.1 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="継承" href="17_java_extend.html" />
+    <link rel="prev" title="インスタンスとクラス" href="13_java_class_instance.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gon
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Javaプログラミング</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_Java_setup.html">Java入門</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_java_structure.html">Javaプログラムの基本構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_java_conmmand.html">Javaの命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_java_variable.html">変数とその宣言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_java_evaluation.html">式の評価</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_java_branch.html">条件分岐、繰り返し処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_java_section_question.html">1日目総合演習</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_java_array.html">配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_java_garbagecollection.html">メモリの解放</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_java_method.html">メソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_java_pcg.html">関数クラスを用いた開発</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_java_object.html">オブジェクト指向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_java_class_instance.html">インスタンスとクラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">クラスの生成</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">クラスの作り方</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">クラスとメンバの命名ルール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">クラスによって新しく型を定義</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="17_java_extend.html">継承</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gon</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Javaプログラミング</a> &raquo;</li>
+        
+      <li>クラスの生成</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/knowledge/14_java_class.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>クラスの生成<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>先ほどクラスという設計図をもとにインスタンスという実物を作る
+という話をしましたが，ここではクラスの作り方を紹介します．</p>
+<div class="section" id="id2">
+<h2>クラスの作り方<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="simple">
+<li><p>クラスに名前をつける</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Hero</span><span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>この形は見たことがないですか？そうです．
+今まで書いてきたコードでおまじないとしてきた物です．
+これはクラスに名前をつける物だったのです．</p>
+<ol class="simple">
+<li><p>フィールドの定義
+オブジェクトには<strong>行動責任</strong>と<strong>情報保持責任</strong>という二つの責任がありました．
+まず，情報保持責任を満たすように定義していきます．
+では，どのように定義するのかを見ていきましょう．</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>public class Hero{
+	String name;
+	int hp;
+	final int LEVEL = 10;  // finalをつけると定数として扱えます．
+}
+</pre></div>
+</div>
+<p>次に行動責任を満たすように定義していきます．
+ここは今までメソッドとして書いてきた方法で定義できます．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>public class Hero{
+	String name;
+	int hp;
+	final int LEVEL = 10;  // finalをつけると定数として扱えます．
+	
+	public void sleep(){
+		this.hp = 100;
+		System.out.println(this.hp);
+	}
+}
+</pre></div>
+</div>
+<p>thisとは？？，publicの後にstaticがないのですが．</p>
+<p>まずthisとは<strong>インスタンスのフィールド中の</strong>という意味です．
+今回の場合は，<strong>インスタンスのフィールド中のname</strong>のことを言っています．
+無くさないといけない重大な理由がない限り，つけてください．
+もしくはそのような重大な理由がある場合は，そもそも欠陥があるのでそっちを修正してください．</p>
+<p>staticについては今回の場合なくていいのです．
+理由は後でまた紹介します．</p>
+</div>
+<div class="section" id="id3">
+<h2>クラスとメンバの命名ルール<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+<div class="section" id="id4">
+<h2>クラスによって新しく型を定義<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>型を定義って？型ってintとかStringですよね．</p>
+<p>これらはJavaが標準で持っている型(入れ物)です．
+それをクラスによって定義します．
+そうすることで自由に入れ物を作ることができます．
+先ほどの例で言うとString型のname，int型のhpを持つHeroという型(入れ物)を
+作りました．</p>
+<p>一つ追加で言うとString型も実はクラスによって定義されています．
+そのため．String.length()とメソッドを使っていることからもクラスということがわかるかと思います．</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="17_java_extend.html" class="btn btn-neutral float-right" title="継承" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="13_java_class_instance.html" class="btn btn-neutral float-left" title="インスタンスとクラス" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2021, gon
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

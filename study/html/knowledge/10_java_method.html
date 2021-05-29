@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>メソッド &mdash; gon 0.1 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="関数クラスを用いた開発" href="11_java_pcg.html" />
+    <link rel="prev" title="メモリの解放" href="09_java_garbagecollection.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gon
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Javaプログラミング</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_Java_setup.html">Java入門</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_java_structure.html">Javaプログラムの基本構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_java_conmmand.html">Javaの命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_java_variable.html">変数とその宣言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_java_evaluation.html">式の評価</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_java_branch.html">条件分岐、繰り返し処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_java_section_question.html">1日目総合演習</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_java_array.html">配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_java_garbagecollection.html">メモリの解放</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">メソッド</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">メソッドとは</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">メソッドを利用するメリット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">メソッドを使う場合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">引数と返り値</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">オーバーロード</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">ある条件とは？</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">オーバーロード考えてみよう</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="11_java_pcg.html">関数クラスを用いた開発</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_java_object.html">オブジェクト指向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_java_class_instance.html">インスタンスとクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_java_class.html">クラスの生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17_java_extend.html">継承</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gon</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Javaプログラミング</a> &raquo;</li>
+        
+      <li>メソッド</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/knowledge/10_java_method.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>メソッド<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id2">
+<h2>メソッドとは<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>多くのプログラムでは１つのシステムを
+複数の部品に分けて作ることができる仕組みを持っています。
+<strong>メソッドとは、そうした部品の最小単位</strong>のことを言います
+下の場合、計算を行うクラス<strong>Calc</strong>においてそれぞれのメソッドを分けて書くと明快になるはず。</p>
+<p><img alt="メソッドによる切り分け" src="../_images/method.png" /></p>
+<p>(パワポのフォントの方が目にやさしそう(個人の意見)なので
+貼ってみました。)</p>
+</div>
+<div class="section" id="id3">
+<h2>メソッドを利用するメリット<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><p>プログラムの見通しがよくなり、全体を把握できる</p>
+<ul>
+<li><p>細かく書いているより、メインコード内では合計値を計算、平均値を計算と書いたほうが見やすい</p></li>
+</ul>
+</li>
+<li><p>機能単位に記述するため、修正範囲を限定できる</p>
+<ul>
+<li><p>平均値にエラーがあれば、そこを直せばいいようにエラーの場所を見つけやすい</p></li>
+</ul>
+</li>
+<li><p>同じ処理を１つのメソッドにまとめることで作業効率が向上する</p>
+<ul>
+<li><p>複数人で作業する場合、個別にコードをかける</p></li>
+</ul>
+</li>
+<li><p>同じ処理をする場合、使いまわしができる</p>
+<ul>
+<li><p>コード量を減らせる</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>メソッドを使う場合<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>使う人がある入力するとほしい結果が出力として帰ってくる。
+この時、使う人はどんな処理をしたのかは全く知らなくて
+よい状況にしなければなりません。</p>
+<p>例でいうと、ATMいって、カード/通帳を入れる、パスワードを入力、引き出したい金額を入力するだけでお金を引き出せます。
+この時の処理を分けると、</p>
+<ol class="simple">
+<li><p>入力：カードか通帳で処理が多少変わる</p></li>
+<li><p>パスワードを入力：パスワードが正しいかデータベースに問い合わせる。</p></li>
+<li><p>引き出したい金額を入力：額が足りているか確認し、足りている場合はその分のお金を出して、データベースを書き換える。
+このように裏ではいろんな処理をしているにもかかわらず自分たちは必要情報だけの入力で目的が達成できました。</p></li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h2>引数と返り値<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>引数とは数式(メソッド) <code class="docutils literal notranslate"><span class="pre">f(x)</span> <span class="pre">=</span> <span class="pre">ax</span></code> における入力値 <code class="docutils literal notranslate"><span class="pre">x</span></code> のことです。実際に、最大値を求めるプログラムについて練習問題で扱いましたが、比較する値が2つ必要でした。</p>
+<p>このプログラムをメソッドにするときは、これらを引数にします。
+また、<strong>返り値はメソッドから返す値</strong>のことで最大値を求めるプログラムにおける結果つまり、最大値のことです。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>int num = fx_(4);
+
+// f(x) = axのプログラム
+
+public static int fx_(int x){
+  int a = 5; // aのままだとエラーが出るのでとりあえず5、aに直いれしてもいい
+  return a*x;
+}
+</pre></div>
+</div>
+<p>このメソッドにおいて引数は <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">x</span></code> 、返り値は <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">a*x</span></code> となります。
+返り値の型はどこで決めたん？？？
+→ <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">「int」</span> <span class="pre">fx_</span></code> と書いていましたがここで型が決まります。
+この時注意すべきことは代入先 <code class="docutils literal notranslate"><span class="pre">num</span></code> とメソッド <code class="docutils literal notranslate"><span class="pre">fx_</span></code> の<strong>型</strong>が一致する必要があります。
+引数は複数設定可能ですが、返り値は1つなので気を付けてください。</p>
+<p>複数の値を返したいなという時、配列のアドレス(1つ)を返えせばいい。配列にすれば、連番になっているので芋づる式に持ち出せます。</p>
+<p>値を返す必要がないなという時は、void型を使いましょう。</p>
+</div>
+<div class="section" id="id6">
+<h2>オーバーロード<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>同じ名前のメソッドを定義することをオーバーロード(多重定義)</strong> と呼びます。名前の通り、<strong>ある条件下であれば</strong>、1つのメソッド名を多重に定義することができます。</p>
+<div class="section" id="id7">
+<h3>ある条件とは？<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>メソッドを使う時に違いが分かればいい。
+つまり<strong>引数</strong>を何かしら変える。
+例えば、引数の<strong>数</strong>や<strong>型</strong>などです。
+(引数の型が異なる場合における引数の順番を変える場合も。)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">例</span><span class="p">)</span>
+
+<span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">add</span><span class="p">(){</span>
+  <span class="n">処理1</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="n">static</span> <span class="nb">int</span> <span class="n">adder</span><span class="p">(</span><span class="nb">int</span> <span class="n">num1</span><span class="p">,</span> <span class="nb">int</span> <span class="n">num2</span><span class="p">){</span>
+  <span class="nb">int</span> <span class="n">add</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">add</span> <span class="o">//</span> <span class="n">int型を返す</span>
+<span class="p">}</span>
+<span class="n">public</span> <span class="n">static</span> <span class="n">double</span> <span class="n">adder</span><span class="p">(</span><span class="n">double</span> <span class="n">num1</span><span class="p">,</span> <span class="n">double</span> <span class="n">num2</span><span class="p">){</span>
+  <span class="n">double</span> <span class="n">add</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">add</span> <span class="o">//</span> <span class="n">double型を返す</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>オーバーロード考えてみよう<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>コンピュータの気持ちになってみましょう。例えば、</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">システムプログラム_A</span>
+<span class="n">System</span><span class="p">(</span><span class="n">String</span> <span class="nb">str</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">システムプログラム_B</span>
+<span class="n">System</span><span class="p">(</span><span class="n">String</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">int</span> <span class="n">num</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>とあったとき、入力が <code class="docutils literal notranslate"><span class="pre">文字列strだけ</span></code> の時はどちらを実行しますか？
+次に、</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">システムプログラム_A</span>
+<span class="n">System</span><span class="p">(</span><span class="n">String</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">int</span> <span class="n">num</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">システムプログラム_B</span>
+<span class="n">System</span><span class="p">(</span><span class="n">String</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">int</span> <span class="n">num</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>の場合、入力が <code class="docutils literal notranslate"><span class="pre">文字列strと整数num</span> </code>であった場合、どちらで実行しますか？
+前者の場合は、入力が <code class="docutils literal notranslate"><span class="pre">文字列のstrのみ</span></code> である <code class="docutils literal notranslate"><span class="pre">System(String</span> <span class="pre">str)</span></code> を
+実行すると思います。</p>
+<p>後者の場合、どちらを開けばいいのか分からないかと思います。
+実際にメソッドの中の処理は違っていたとしても呼び出す側は
+これしか見えていないため判別がつきません。
+こうしたプログラムをJavaは許さないため、エラーになります。
+また、返り値が違っていたとしても、実行する際に必要な項目は
+引数であるためエラーです。</p>
+<p>この時、はたから見て見分けられるようなメソッドをオーバーロードといいます。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="11_java_pcg.html" class="btn btn-neutral float-right" title="関数クラスを用いた開発" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="09_java_garbagecollection.html" class="btn btn-neutral float-left" title="メモリの解放" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2021, gon
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

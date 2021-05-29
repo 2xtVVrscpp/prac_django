@@ -1,0 +1,47 @@
+# Javaの命令
+
+## 入出力：System.in、System.out
+改行付き / 改行なし
+
+```
+test.java
+import java.util.Scanner;
+
+public class test {
+  public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+    // １行分入力
+    String str = scan.nextLine();
+
+    // 1つの整数を入力
+    String str2 = scan.nextInt();
+
+    // メモリリークするので使い終わったら閉じてください
+    scan.close();
+
+    System.out.println("改行付き："+str);
+    System.out.print("改行なし："+str2);
+  }
+}
+
+```
+
+## 数学：Math
+- 最大値：max
+- 最小値：min
+- 乱数生成：new java.util.Random()クラス
+  - nextInt(上限値)メソッド
+
+``` 
+section2.java
+public class section2 {
+  public static void main(String[] args){
+    int num1=3, num2=10;
+    int r = new java.util.Random().nextInt(10);
+
+    System.out.println("大きいのは：" + Math.max(num1, num2));
+    System.out.println("小さいのは：" + Math.min(num1, num2));
+    System.out.println("乱数生成：" + r);
+  }
+}
+```

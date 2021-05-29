@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>配列 &mdash; gon 0.1 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="メモリの解放" href="09_java_garbagecollection.html" />
+    <link rel="prev" title="1日目総合演習" href="07_java_section_question.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gon
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Javaプログラミング</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_Java_setup.html">Java入門</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_java_structure.html">Javaプログラムの基本構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_java_conmmand.html">Javaの命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_java_variable.html">変数とその宣言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_java_evaluation.html">式の評価</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_java_branch.html">条件分岐、繰り返し処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_java_section_question.html">1日目総合演習</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">配列</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">配列とは</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">データ構造</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">配列の宣言</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">要素の初期化</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">配列に対する値の格納、出力</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">厳密な話</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">添え字を変数で指定する</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09_java_garbagecollection.html">メモリの解放</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_java_method.html">メソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_java_pcg.html">関数クラスを用いた開発</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_java_object.html">オブジェクト指向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_java_class_instance.html">インスタンスとクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_java_class.html">クラスの生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17_java_extend.html">継承</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gon</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Javaプログラミング</a> &raquo;</li>
+        
+      <li>配列</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/knowledge/08_java_array.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>配列<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id2">
+<h2>配列とは<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>配列とは、<strong>あるデータ型の変数をまとめて保管するデータ構造</strong>のことです。
+簡単に言うと個人のテストの結果(国語、算数、理科、社会)をまとめて保管するようなものです。
+また個人だけではなく、クラス全体のテストの結果を2次元的に保管することもできます。</p>
+<table class="colwidths-given docutils align-default" id="id9">
+<caption><span class="caption-text">１次元配列</span><a class="headerlink" href="#id9" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>データ番号</p></th>
+<th class="head"><p>中身</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>国語</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>算数</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>理科</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>社会</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default" id="id10">
+<caption><span class="caption-text">2次元配列</span><a class="headerlink" href="#id10" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>iの値</p></th>
+<th class="head"><p>保持しているアドレス</p></th>
+<th class="head"><p>array[i][0]</p></th>
+<th class="head"><p>array[i][1]</p></th>
+<th class="head"><p>array[i][2]</p></th>
+<th class="head"><p>array[i][3]</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>array[0]</p></td>
+<td><p>Aさん国語</p></td>
+<td><p>Aさん算数</p></td>
+<td><p>Aさん理科</p></td>
+<td><p>Aさん社会</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>array[1]</p></td>
+<td><p>Bさん国語</p></td>
+<td><p>Bさん算数</p></td>
+<td><p>Bさん理科</p></td>
+<td><p>Bさん社会</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>array[2]</p></td>
+<td><p>Cさん国語</p></td>
+<td><p>Cさん算数</p></td>
+<td><p>Cさん理科</p></td>
+<td><p>Cさん社会</p></td>
+</tr>
+</tbody>
+</table>
+<p>2次元の場合，少し複雑になりまして，array[][]のように書くのですが，
+左側の[]が行，右側の[]が列を指定します．
+例えば上の表で <code class="docutils literal notranslate"><span class="pre">array[1][2]=&quot;Bさん算数&quot;</span></code> です．
+アドレスの状況はというと</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>array：array[0]のアドレス
+array[0]：array[0][0]のアドレス
+array[1]：array[1][0]のアドレス
+array[2]：array[2][0]のアドレス
+</pre></div>
+</div>
+<p>というふうになっています．</p>
+<p>図で言うとこんな感じです．※図中のアドレスは適当です．</p>
+<p>読み飛ばしていいです．
+(難しいことを言うと，array[ ]は内部に配列を持っているような感じになります，
+つまり，二次元配列の変数は配列の配列という構造になっています．)</p>
+<p><img alt="二次元配列" src="../_images/2array.jpg" /></p>
+<div class="section" id="id3">
+<h3>データ構造<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ある一定のルールに従ってデータを格納する仕組み</p>
+<ul class="simple">
+<li><p>スタック：first in - last out</p></li>
+<li><p>キュー：first in - first out</p></li>
+<li><p>配列：同一種類のデータをまとめて格納</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>配列の宣言<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>配列の変数の宣言は多少の差異があります。</p>
+<ol class="simple">
+<li><p>配列変数の宣言において配列であると明示</p></li>
+<li><p>配列要素の作成</p></li>
+<li><p>初期値は型によって0 / false / nullに設定される。</p></li>
+</ol>
+<p>大きくこの二つです。普通の変数の場合は変数定義とともに要素も作成されていましたが、
+配列の場合、いくつのデータをまとめて保管するかについても必要となるためこのような形となっています。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. int[] array; //配列の準備
+2. array = new int[5] //場所の確保、代入
+</pre></div>
+</div>
+<p><img alt="&quot;配列&quot;" src="../_images/array.png" /></p>
+</div>
+<div class="section" id="id5">
+<h2>要素の初期化<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>先ほど要素の初期値は型によって0 / false / nullに設定される
+という話をしましたが、それ以外の値を使いたい場合は以下のように宣言します。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="p">{</span><span class="mi">60</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">};</span> 
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>配列に対する値の格納、出力<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>まとめて格納することは分かったがどうやって中のデータを
+参照すればいいのか。
+<br>→添え字を使います。</p>
+<p>添え字とは配列の内部に振った番号のことで、
+単体の型を参照可能となる。
+先ほどの例で <code class="docutils literal notranslate"><span class="pre">int[5]</span></code> としたが、この場合、</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">array</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">array</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">array</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>とすることで配列内部を参照できます。この時注意すべきことは添え字は <strong>0</strong> から始まります。
+これを用いて値の格納、出力ができます。</p>
+<p>ちなみに添え字を 0~4 なのに 1~5 としたらコンパイルは通ります。
+しかし、実行時にarray[5]がなく、エラーが起きます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">配列内部に値の格納</span>
+<span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">array</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="n">配列内部の値の出力</span>
+<span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>厳密な話<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>厳密にいうと配列変数自体はアドレス(どこに領域をとるか)を
+持っています。つまり<code class="docutils literal notranslate"><span class="pre">array[0]は配列arrayのアドレスからintのデータ容量*0進んだ位置にあるデータ</span></code>をさしています。</p>
+<p>以下のようなプログラムを実行してみます。
+ついでに拡張for文も入れときます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>int[] array, array2; //配列の準備
+array = new int[5] //場所の確保、代入
+
+for(int i = 0;i &lt; array.length;i++){
+  array[i] = i;
+}
+
+array2 = array;  // array2の領域にarrayのアドレスを代入
+
+for(int i: array2){  // 拡張for文です。配列の中身がiに入る。
+  System.out.println(i);
+}
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">array2</span> <span class="pre">=</span> <span class="pre">array;</span></code> は**アドレス渡し(参照渡し)**と呼ばれています。
+ここでは値ではなく、変数の格納場所つまり、<strong>アドレスを代入</strong>しています。
+そのため、このプログラムの場合、ハードリンクのような状態となり、
+<strong>arrayの変更がarray2に反映され、array2の変更もarrayに反映されます。</strong>
+配列の中身だけコピーしたい場合はfor文で回すか <code class="docutils literal notranslate"><span class="pre">配列名.clone()</span></code> などを使ってください。</p>
+</div>
+<div class="section" id="id8">
+<h2>添え字を変数で指定する<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>添え字は定数を使ってもいいのですが、
+実際のところ<strong>変数を使うことが多い</strong>です。
+というのも、ループ処理を行う場合において
+ループ変数などを使った方が適しているからです。
+(定数を使う場合はループしない処理の場合に
+使われることがあります。)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="o">.</span><span class="n">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+  <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="09_java_garbagecollection.html" class="btn btn-neutral float-right" title="メモリの解放" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="07_java_section_question.html" class="btn btn-neutral float-left" title="1日目総合演習" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2021, gon
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

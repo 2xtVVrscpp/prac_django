@@ -1,0 +1,452 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>変数とその宣言 &mdash; gon 0.1 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="式の評価" href="05_java_evaluation.html" />
+    <link rel="prev" title="Javaの命令" href="03_java_conmmand.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gon
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Javaプログラミング</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_Java_setup.html">Java入門</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_java_structure.html">Javaプログラムの基本構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_java_conmmand.html">Javaの命令</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">変数とその宣言</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">変数の型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">変数を使う上で</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">変数の宣言</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">演算子</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">オペランド</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">リテラル</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">型の変換(キャスト)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">細かい話</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="05_java_evaluation.html">式の評価</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_java_branch.html">条件分岐、繰り返し処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_java_section_question.html">1日目総合演習</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_java_array.html">配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_java_garbagecollection.html">メモリの解放</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_java_method.html">メソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_java_pcg.html">関数クラスを用いた開発</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_java_object.html">オブジェクト指向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_java_class_instance.html">インスタンスとクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_java_class.html">クラスの生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17_java_extend.html">継承</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gon</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Javaプログラミング</a> &raquo;</li>
+        
+      <li>変数とその宣言</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/knowledge/04_java_variable.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>変数とその宣言<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id2">
+<h2>変数の型<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>一部のプログラム言語を除き、変数(=値を格納する箱)を
+使う時には変数の容量や何を入れるのか(型)を定義する必要があります。
+そのため、変数の型を知りましょう。</p>
+<table class="colwidths-given docutils align-default" id="id12">
+<caption><span class="caption-text">変数の型</span><a class="headerlink" href="#id12" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>型名</p></th>
+<th class="head"><p>役割</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>整数型</p></td>
+</tr>
+<tr class="row-odd"><td><p>long int</p></td>
+<td><p>大きな整数</p></td>
+</tr>
+<tr class="row-even"><td><p>float</p></td>
+<td><p>浮動小数点付き</p></td>
+</tr>
+<tr class="row-odd"><td><p>double</p></td>
+<td><p>実数</p></td>
+</tr>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>真偽値 (0/1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>char</p></td>
+<td><p>1文字</p></td>
+</tr>
+<tr class="row-even"><td><p>String</p></td>
+<td><p>文字列</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>変数を使う上で<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>宣言した型の領域を超えるとオーバーフローするので気を付けてください。
+以下に例を示しているので実行してみてください。
+0/1の関係で  <code class="docutils literal notranslate"><span class="pre">01111111(127)</span> <span class="pre">→</span> <span class="pre">10000000(-128)</span></code> となります。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">例</span><span class="p">)</span><span class="n">実行してみて</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">test</span><span class="p">{</span>
+  <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">){</span>
+    <span class="n">byte</span> <span class="n">num</span><span class="o">=</span><span class="mi">127</span><span class="p">;</span>
+    <span class="n">num</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>それ以外にも小数点以下の計算を行う時には誤差が生じます。パソコンは2進数で動いているので</p>
+<div class="math notranslate nohighlight">
+\[  2^{-1}, 2^{-2}, 2^{-3}...\]</div>
+<p>で表される数値以外仕方がない。
+しかし、誤差が小さくなるようなAPIはありますので
+それをご利用ください。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">例</span><span class="p">)</span><span class="n">実行してみて</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">test</span><span class="p">{</span>
+  <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">){</span>
+    <span class="n">double</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+      <span class="n">num</span> <span class="o">+=</span> <span class="mf">0.1</span>
+    <span class="p">}</span>
+    <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>変数の宣言<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>変数の宣言は <code class="docutils literal notranslate"><span class="pre">型</span> <span class="pre">変数名</span></code> という命令文で行われます。
+変数名は <strong>Javaプログラムの基本構造</strong>で 記載したように分かりやすい名前を付けてください。
+決して <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">a</span></code> などとしないように。
+また、初期値を設定することもできます。</p>
+<p>(円周率など値を変更したくない変数は <code class="docutils literal notranslate"><span class="pre">final</span></code> をつけ、
+変更できないようにします。)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">例</span><span class="p">)</span>
+<span class="nb">int</span> <span class="n">num1</span><span class="p">;</span>
+<span class="n">string</span> <span class="n">paragraph</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">;</span>
+<span class="n">double</span> <span class="n">num2</span> <span class="o">=</span> <span class="mf">2.3</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>演算子<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>演算子も設定されているので覚えましょう。
+(文字列型の結合は文字列+文字列でできるよ)</p>
+<table class="colwidths-given docutils align-default" id="id13">
+<caption><span class="caption-text">演算子</span><a class="headerlink" href="#id13" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>演算子</p></th>
+<th class="head"><p>役割</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>=</p></td>
+<td><p>代入</p></td>
+</tr>
+<tr class="row-odd"><td><p>+, -, <a href="#id10"><span class="problematic" id="id11">*</span></a>, /</p></td>
+<td><p>四則演算</p></td>
+</tr>
+<tr class="row-even"><td><p>==</p></td>
+<td><p>イコール</p></td>
+</tr>
+<tr class="row-odd"><td><p>!=</p></td>
+<td><p>ノットイコール</p></td>
+</tr>
+<tr class="row-even"><td><p>A&gt;B</p></td>
+<td><p>AはBより大きい</p></td>
+</tr>
+<tr class="row-odd"><td><p>A&lt;B</p></td>
+<td><p>AはBより小さい</p></td>
+</tr>
+<tr class="row-even"><td><p>var++</p></td>
+<td><p>var=var+1</p></td>
+</tr>
+<tr class="row-odd"><td><p>var+=num</p></td>
+<td><p>var=var+num</p></td>
+</tr>
+<tr class="row-even"><td><p>!num</p></td>
+<td><p>否定(numではない)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h2>オペランド<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id7">
+<h3>リテラル<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>リテラルとは、数字や文字列の形のこと</p>
+<table class="colwidths-given docutils align-default" id="id14">
+<caption><span class="caption-text">リテラル</span><a class="headerlink" href="#id14" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 36%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>リテラルの種類</p></th>
+<th class="head"><p>表記例</p></th>
+<th class="head"><p>型</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>小数点がない数字</p></td>
+<td><p>3000L</p></td>
+<td><p>long</p></td>
+</tr>
+<tr class="row-odd"><td><p>小数点付き数字</p></td>
+<td><p>30.5</p></td>
+<td><p>double</p></td>
+</tr>
+<tr class="row-even"><td><p>小数点付き数字で末尾がF/f</p></td>
+<td><p>30.5F</p></td>
+<td><p>float</p></td>
+</tr>
+<tr class="row-odd"><td><p>真偽値</p></td>
+<td><p>true</p></td>
+<td><p>boolean</p></td>
+</tr>
+<tr class="row-even"><td><p>引用符で囲まれた文字</p></td>
+<td><p>K</p></td>
+<td><p>char</p></td>
+</tr>
+<tr class="row-odd"><td><p>二重引用符で囲まれた文字列</p></td>
+<td><p>Java</p></td>
+<td><p>String</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>型の変換(キャスト)<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>int：整数、double：実数、String：文字列とあったが、
+doubleの箱にはintの箱が入るのでJavaが自動で変換してくれる。
+メモリ領域が小さい変数を大きい変数に代入するときはいい。</p>
+<p><img alt="キャストイメージ" src="../_images/cast.png" /></p>
+<p>メモリ領域が大きい変数を小さい変数に代入することもできるけど...
+できるからといってなるべくしないように。無理やり押し込んでいるようなものです。</p>
+</div>
+<div class="section" id="id9">
+<h2>細かい話<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>変数の宣言というのはコンピュータ(メモリ)上に
+領域を確保する手順です。
+この時に、領域量を設定しないと</p>
+<ul class="simple">
+<li><p>どれだけ確保すればよいか分からない</p></li>
+<li><p>領域の名前を設定しないと参照できずに使えない</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="05_java_evaluation.html" class="btn btn-neutral float-right" title="式の評価" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="03_java_conmmand.html" class="btn btn-neutral float-left" title="Javaの命令" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2021, gon
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
