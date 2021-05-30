@@ -1,0 +1,131 @@
+# 継承
+
+## 継承とは
+あるクラスをもとにして別の拡張機能を有するクラスを定義する．
+継承がない場合，以下のようなプログラムを書くことになるでしょう．
+全く同じメソッド書く必要があり，面倒で，かつメンテナンス時に
+二つを同じように修正しなければならないという問題が生じます．
+片方の修正を忘れていてもエラーが出ないので．
+
+```
+public class Hero{
+	String name;
+	int hp;
+	
+	public void sleep(){
+	
+	}
+	public void attack(){
+	
+	}
+}
+
+public class SuperHero{
+	String name;
+	int hp;
+	boolean fly;
+	
+	public void sleep(){
+	
+	}
+	public void attack(){
+	
+	}
+	public void fly(){
+	
+	}
+}
+
+```
+
+
+そこで継承を使うと以下のようになります．``extend``を使うことで元のクラスの機能を引き継いで
+新しいクラスを定義できます．
+
+```
+public class Hero{
+	String name;
+	int hp;
+	
+	public void sleep(){
+	
+	}
+	public void attack(){
+	
+	}
+}
+
+public class SuperHero extend Hero{
+	boolean fly;
+
+	public void fly(){
+	
+	}
+}
+
+```
+
+![継承](pic/extend_field.jpg)
+
+## オーバーライド
+新しく定義したクラスで，メソッドを書き換えて元のクラスとは異なる処理を行いたい．
+そんな時には**オーバーライド**(上書き)を行いましょう．
+``public class 拡張クラス名 extends 元のクラス名``
+
+```
+public class Hero{
+	String name;
+	int hp;
+	
+	public void sleep(){
+		this.hp += 100;
+	}
+	public void attack(){
+	
+	}
+}
+
+public class SuperHero extends Hero{
+	boolean fly;
+
+	public void fly(){
+	
+	}
+	public void sleep(){
+		this.hp += 200;  // SuperHeroでは200回復させたい．
+	}
+}
+```
+
+## 継承におけるコンストラクタ
+継承した新しいクラスを定義した時にコンストラクタはどういった動きをするのでしょうか．
+可能性としては3つあります．
+
+1. 元のクラスのコンストラクタが動く
+2. 新しいクラスのコンストラクタが動く
+3. 両方のクラスのコンストラクタが動く
+
+正解としては，3番になります．
+では，なぜ両方動くのでしょうか．
+理由としては**継承後のクラスのインスタンスを生成するときに，
+継承元のクラスのインスタンスを作っているから**です．
+
+継承は，オリジナルのクラスの機能を引き継いだ上で，
+新しい機能を定義しています．そのため，このような形式をとっています．
+
+![コンストラクタの実行](pic/constructor_super.jpg)
+
+## 継承における注意
+メンバ変数に共通点があるからといって安直に継承するのはよろしくありません．
+継承する上で考えるべき関係は**is-a関係**です，
+例えば，itemというクラスがある時，
+そこから継承してできるものはportion(回復薬)やSoard(剣)です．
+一方で不適切な例を言うとhouse(家)です．
+確かに，家も持ち物といえば持ち物ですが，
+**持ち運ぶなどといった共通点**からいくと，別物の扱いになります．
+
+ここの塩梅が難しいところですが，慣れていきましょう．
+
+
+
+
